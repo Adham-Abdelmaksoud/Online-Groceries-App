@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Online_Groceries_App</string>
+    <string name="terms_privacy_text">By continuing you agree to our <font color="#53B175">Terms of Service</font> and <font color="#53B175">Privacy Policy</font></string>
+    <string name="terms_conditions_text">By placing an order you agree to our <font color="#181725">Terms</font> And <font color="#181725">Conditions</font></string>
+</resources>

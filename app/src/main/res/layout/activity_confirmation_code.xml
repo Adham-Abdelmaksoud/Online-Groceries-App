@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="310dp"
+            android:src="@drawable/img_faded_background"
+            android:translationZ="-2dp"
+            android:translationY="-12dp"
+            />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="15dp"
+            tools:context=".views.activities.MobileNumberActivity">
+
+            <ImageView
+                android:id="@+id/backArrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_arrow_left_black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginHorizontal="12dp"
+                android:layout_marginTop="50dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/backArrow">
+
+                <TextView
+                    android:id="@+id/titleTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/gilroy_semibold"
+                    android:text="Enter your 4-digit code"
+                    android:textColor="@color/black"
+                    android:textSize="25dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/subtitle_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:fontFamily="@font/gilroy_bold"
+                    android:text="Code"
+                    android:textColor="@color/medium_gray"
+                    android:textSize="16dp"
+                    app:layout_constraintStart_toStartOf="@id/titleTxt"
+                    app:layout_constraintTop_toBottomOf="@id/titleTxt" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/editLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/subtitle_text">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/textEdit"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/transparent"
+                        android:fontFamily="@font/gilroy_semibold"
+                        android:hint="- - - -" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <ImageButton
+                    android:id="@+id/arrowFront"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:background="@drawable/circle_arrow_right"
+                    android:padding="10dp"
+                    android:src="@drawable/ic_arrow_right_white"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+                <TextView
+                    android:id="@+id/resendBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/gilroy_semibold"
+                    android:text="Resend Code"
+                    android:textColor="@color/app_green"
+                    android:textSize="17dp"
+                    app:layout_constraintBottom_toBottomOf="@id/arrowFront"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/arrowFront" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </RelativeLayout>
+
+
+</layout>

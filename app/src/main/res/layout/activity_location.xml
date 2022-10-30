@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="310dp"
+            android:src="@drawable/img_faded_background"
+            android:translationZ="-2dp"
+            android:translationY="-12dp"
+            />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="15dp"
+            tools:context=".views.activities.LocationActivity">
+
+            <ImageView
+                android:id="@+id/backArrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_arrow_left_black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/locationImg"
+                android:layout_width="230dp"
+                android:layout_height="230dp"
+                android:layout_marginTop="12dp"
+                android:src="@drawable/img_location"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/backArrow" />
+
+            <TextView
+                android:id="@+id/titleTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/gilroy_semibold"
+                android:text="Select Your Location"
+                android:textColor="@color/black"
+                android:textSize="26dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/locationImg" />
+
+            <TextView
+                android:id="@+id/subTitleTxt"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/gilroy_semibold"
+                android:gravity="center"
+                android:text="Switch on your location to stay in tune with what's happening in your area"
+                android:textColor="@color/medium_gray"
+                android:textSize="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/titleTxt" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:paddingHorizontal="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/subTitleTxt">
+
+                <TextView
+                    android:id="@+id/zoneLbl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="7dp"
+                    android:fontFamily="@font/gilroy_semibold"
+                    android:text="Your Zone"
+                    android:textColor="@color/medium_gray"
+                    android:textSize="17dp"
+                    app:layout_constraintBottom_toTopOf="@id/zoneSpinner"
+                    app:layout_constraintStart_toStartOf="@id/zoneSpinner" />
+
+                <Spinner
+                    android:id="@+id/zoneSpinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="40dp"
+                    android:background="@drawable/spinner_arrow"
+                    app:layout_constraintBottom_toTopOf="@id/areaLbl"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/submitBtn" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1.2dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@color/light_gray"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/zoneSpinner" />
+
+                <TextView
+                    android:id="@+id/areaLbl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="7dp"
+                    android:fontFamily="@font/gilroy_semibold"
+                    android:text="Your Area"
+                    android:textColor="@color/medium_gray"
+                    android:textSize="17dp"
+                    app:layout_constraintBottom_toTopOf="@id/areaSpinner"
+                    app:layout_constraintStart_toStartOf="@id/areaSpinner" />
+
+                <Spinner
+                    android:id="@+id/areaSpinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="40dp"
+                    android:background="@drawable/spinner_arrow"
+                    app:layout_constraintBottom_toTopOf="@id/submitBtn"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/submitBtn" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1.2dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@color/light_gray"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/areaSpinner" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/submitBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="50dp"
+                    android:background="@drawable/box_get_started"
+                    android:fontFamily="@font/gilroy_semibold"
+                    android:paddingVertical="20dp"
+                    android:text="Submit"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="18dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </RelativeLayout>
+
+
+</layout>

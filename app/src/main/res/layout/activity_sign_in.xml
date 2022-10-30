@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".views.activities.SignInActivity">
+
+        <ImageView
+            android:id="@+id/backgroundImg"
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:src="@drawable/img_login" />
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:src="@drawable/app_logo_colored"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="50dp" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/backgroundImg"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:paddingHorizontal="25dp">
+
+            <TextView
+                android:id="@+id/titleTxt"
+                android:layout_width="220dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:text="Get your groceries with nectar"
+                android:fontFamily="@font/gilroy_semibold"
+                android:textColor="@color/black"
+                android:textSize="25dp"
+                android:lineSpacingExtra="3dp" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/editLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/titleTxt"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/textEdit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:fontFamily="@font/gilroy_semibold"
+                    android:cursorVisible="false"
+                    android:text="      +880 "
+                    android:textColor="@color/black"
+                    android:enabled="false"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+            <Button
+                android:id="@+id/clickLayout"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                app:layout_constraintStart_toStartOf="@id/editLayout"
+                app:layout_constraintEnd_toEndOf="@id/editLayout"
+                app:layout_constraintTop_toTopOf="@id/editLayout"
+                app:layout_constraintBottom_toBottomOf="@id/editLayout"
+                android:background="@color/transparent"
+                android:translationZ="2dp"
+                />
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                app:layout_constraintStart_toStartOf="@id/editLayout"
+                app:layout_constraintTop_toTopOf="@id/editLayout"
+                app:layout_constraintBottom_toBottomOf="@id/editLayout"
+                android:layout_marginTop="12dp"
+                android:src="@drawable/img_flag"
+                />
+
+            <TextView
+                android:id="@+id/optionTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/editLayout"
+                app:layout_constraintBottom_toTopOf="@id/googleBtn"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:text="Or connect with social media"
+                android:textColor="@color/medium_gray"
+                android:textStyle="bold"
+                />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/googleBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/facebookBtn"
+                android:text="Continue with Google"
+                android:textColor="@color/white"
+                android:background="@drawable/box_google"
+                android:textAllCaps="false"
+                android:textSize="17dp"
+                android:paddingVertical="20dp"
+                android:fontFamily="@font/gilroy_semibold"
+                android:layout_marginBottom="15dp"
+                />
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/img_google"
+                app:layout_constraintStart_toStartOf="@id/googleBtn"
+                app:layout_constraintTop_toTopOf="@id/googleBtn"
+                app:layout_constraintBottom_toBottomOf="@id/googleBtn"
+                android:translationZ="10dp"
+                android:layout_marginLeft="30dp"
+                />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/facebookBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:text="Continue with Facebook"
+                android:textColor="@color/white"
+                android:background="@drawable/box_facebook"
+                android:textAllCaps="false"
+                android:textSize="17dp"
+                android:paddingVertical="20dp"
+                android:fontFamily="@font/gilroy_semibold"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="50dp"
+                />
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/img_facebook"
+                app:layout_constraintStart_toStartOf="@id/facebookBtn"
+                app:layout_constraintTop_toTopOf="@id/facebookBtn"
+                app:layout_constraintBottom_toBottomOf="@id/facebookBtn"
+                android:translationZ="10dp"
+                android:layout_marginLeft="30dp"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

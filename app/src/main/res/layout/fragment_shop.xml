@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout android:background="@color/white"
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingHorizontal="17dp"
+                    tools:context=".activities.MainActivity">
+
+                    <ImageView
+                        android:id="@+id/carrotImg"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:layout_marginTop="30dp"
+                        android:src="@drawable/img_carrot_colored"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/addressTxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Dhaka, Banassre"
+                        android:textColor="#4C4F4D"
+                        android:textSize="18sp"
+                        android:fontFamily="@font/gilroy_bold"
+                        app:layout_constraintEnd_toEndOf="@id/carrotImg"
+                        app:layout_constraintStart_toStartOf="@id/carrotImg"
+                        app:layout_constraintTop_toBottomOf="@id/carrotImg" />
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginEnd="10dp"
+                        android:src="@drawable/ic_location_gray"
+                        app:layout_constraintBottom_toBottomOf="@id/addressTxt"
+                        app:layout_constraintEnd_toStartOf="@id/addressTxt"
+                        app:layout_constraintTop_toTopOf="@id/addressTxt" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/searchLayout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="17dp"
+                        android:layout_marginHorizontal="6dp"
+                        android:textColor="@color/black"
+                        app:boxStrokeColor="@color/black"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/addressTxt">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/searchBox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:background="@drawable/box_search"
+                            android:drawableStart="@drawable/ic_search_black"
+                            android:fontFamily="@font/gilroy_semibold"
+                            android:gravity="center_vertical"
+                            android:hint="Search Store"
+                            android:textSize="15dp"
+                            android:drawablePadding="10dp"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <ImageView
+                        android:id="@+id/discountBanner"
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:layout_marginTop="15dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/img_discount_banner"
+                        app:layout_constraintEnd_toEndOf="@id/searchLayout"
+                        app:layout_constraintStart_toStartOf="@id/searchLayout"
+                        app:layout_constraintTop_toBottomOf="@+id/searchLayout" />
+
+                    <TextView
+                        android:id="@+id/exclusiveOfferTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="Exclusive Offer"
+                        android:textColor="@color/black"
+                        android:textSize="25sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="@+id/discountBanner"
+                        app:layout_constraintTop_toBottomOf="@+id/discountBanner" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="See all"
+                        android:textColor="@color/app_green"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@id/exclusiveOfferTitle"
+                        app:layout_constraintEnd_toEndOf="@id/discountBanner"
+                        app:layout_constraintTop_toTopOf="@id/exclusiveOfferTitle" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerExclusiveOffer"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@id/searchLayout"
+                        app:layout_constraintTop_toBottomOf="@id/exclusiveOfferTitle"/>
+
+                    <TextView
+                        android:id="@+id/bestSellingTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Best Selling"
+                        android:textColor="@color/black"
+                        android:textSize="25sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="@id/discountBanner"
+                        app:layout_constraintTop_toBottomOf="@id/recyclerExclusiveOffer" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="See all"
+                        android:textColor="@color/app_green"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@id/bestSellingTitle"
+                        app:layout_constraintEnd_toEndOf="@id/discountBanner"
+                        app:layout_constraintTop_toTopOf="@id/bestSellingTitle" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerBestSelling"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@id/searchLayout"
+                        app:layout_constraintTop_toBottomOf="@id/bestSellingTitle"/>
+
+                    <TextView
+                        android:id="@+id/groceriesTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Groceries"
+                        android:textColor="@color/black"
+                        android:textSize="25sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="@id/discountBanner"
+                        app:layout_constraintTop_toBottomOf="@id/recyclerBestSelling" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="See all"
+                        android:textColor="@color/app_green"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@id/groceriesTitle"
+                        app:layout_constraintEnd_toEndOf="@id/discountBanner"
+                        app:layout_constraintTop_toTopOf="@id/groceriesTitle" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerGroceries"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@id/searchLayout"
+                        app:layout_constraintTop_toBottomOf="@id/groceriesTitle"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.core.widget.NestedScrollView>
+        </RelativeLayout>
+    </RelativeLayout>
+
+</layout>
+
+
